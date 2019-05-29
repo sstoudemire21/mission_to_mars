@@ -8,7 +8,7 @@ def init_browser():
     executable_path = {"executable_path": "../homework/chromedriver"}
     return Browser("chrome", **executable_path, headless=False)
 
-mars_data = {}
+mada = {}
 
 
 def scrape():
@@ -83,7 +83,6 @@ def scrape():
 
     table = mars_df.to_html(classes="table table-striped")
 
-    browser.quit()
     #-----------------------------------------------------
 
     astro = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
@@ -114,7 +113,7 @@ def scrape():
         hemisphere_image_urls
 
 
-    mars_data = {
+    mada = {
         "news_title": news_title,
         "news_p": news_p,
         "featured_image_url": main_url,
@@ -125,7 +124,7 @@ def scrape():
 
     browser.quit()
 
-    return mars_data
+    return mada
 
 
 
