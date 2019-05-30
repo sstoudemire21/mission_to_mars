@@ -20,17 +20,17 @@
         <div class="row">
             <div class="col-md-12" />
             <h3>Latest Mars News</h3>
-            <h6 style="color: #c1440e">{{ mars_data.news_title }}</h6>
-            <p>{{ mars_data.news_p}}</p>
+            <h6 style="color: #c1440e">{{ mada.news_title }}</h6>
+            <p>{{ mada.news_p}}</p>
         </div>
 
                    </div>
                            <div class="container">
                         <div class="row">
                             <!-- Left Image-->
-                            <div class="col-lg-8 col-md-8 col-sm-12">
+                            <div class="col-md-8">
                                 <h3>Featured Mars Image</h3>
-                                <img src="{{ mars_data.featured_image_url }}" style="max-width:100%; max-height: auto;" alt="Mars Featured Image">
+                                <img src="{{ mada.featured_image_url }}" style="max-width:100%; max-height: auto;" alt="Mars Featured Image"/>
                             </div>
 
                 <!-- Weather Card -->
@@ -39,7 +39,7 @@
                     <div class="card" style="width: 18rem;">
                         <div class="card-body text-white bg-dark">
                             <h6 class="card-title" style="font: bold">Current Weather on Mars</h6>
-                            <p class="card-text">{{ mars_data.latest_tweet }}</p>
+                            <p class="card-text">{{ mada.latest_tweet }}</p>
                         </div>
 
                     </div>
@@ -61,7 +61,7 @@
                     style="padding-left: 80%; max-width: 500px; max-height: 100px; font-size: 10px; margin-bottom: 15px;">
                     <h3 style="font: bold">Mars Facts</h3>
 
-                    {{ mars_data.mars_table|safe}}
+                    {{ mada.mars_table|safe}}
                 </div>
             </div> <!-- col4 -->
         </div><!-- Row -->
@@ -76,7 +76,7 @@
             <div class="row">
                 <div class="col-md-8">
 
-                    {% for hemispheres in mars_data.hemi %}
+                    {% for hemispheres in mada.hemi %}
                     <div class="col-md-8">
                         <div class="card text-white bg-dark" style="margin: 50px;">
                             <img class="card-img-top" src="{{ hemispheres.img_url }}" />
