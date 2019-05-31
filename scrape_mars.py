@@ -50,7 +50,7 @@ def scrape():
     more_info = browser.find_link_by_partial_text('more info')
     more_info.click()
 
-    img = soup.find('figure', class_='lede')
+    img = soup.find("img", class_="thumb")["src"]
 
     main_url = f'https://www.jpl.nasa.gov{img}'
 
@@ -96,7 +96,7 @@ def scrape():
     hemisphere_image_urls = []
 
     products = soup.find("div", class_ = "result-list" )
-    hemispheres = products.find_all("div", class_="item")
+    hemi = products.find_all("div", class_="item")
 
     for hemisphere in hemispheres:
         title = hemisphere.find("h3").text
